@@ -1,6 +1,5 @@
 .global _start
 
-
 _start:
 	mov r0, #1 @3 6
 	mov r1, #3 @2 2
@@ -10,7 +9,6 @@ _start:
 	mov r5, #7 @4 0
 	mov r6, #7 @3 6
 	mov r7, #6 @2 0
-	
 	
 	mov r9,#2
 
@@ -55,9 +53,6 @@ _start:
 		add r12, r12, #1
 		bge loop
 
-	
-
-	
 	fin:
 	
 	mul r1, r12,r9 @ 110
@@ -66,4 +61,9 @@ _start:
 	
 	sub r7, r9,r8
 	
-	@bx lr
+	cmp r7,#11
+	moveq r7,#0
+	
+	cmp r7,#10
+	moveq r7,#75
+	
